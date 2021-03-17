@@ -19,4 +19,8 @@ app.get('/detail', function (req, res) {
     res.render('detail', req.query);
 });
 
+app.get('/checkout', function (req, res) {
+    res.render('checkout', req.query);
+});
+
 app.listen(port);
