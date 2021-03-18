@@ -37,7 +37,20 @@ app.get('/detail', function (req, res) {
             pending: req.headers.host + "/pending",
             failure: req.headers.host + "/failure"
         },
-        auto_return: "approved"
+        auto_return: "approved",
+        payment_methods: {
+            excluded_payment_methods: [
+                {
+                    id: "amex"
+                }
+            ],
+            excluded_payment_types: [
+                {
+                    id: "atm"
+                }
+            ],
+            installments: 6
+        },
     };
     
     mercadopago.preferences.create(preference)
