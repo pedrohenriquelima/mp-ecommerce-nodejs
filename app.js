@@ -72,6 +72,7 @@ app.get('/detail', function (req, res) {
             ],
             installments: 6
         },
+        notification_url: req.headers.host + '/notifications',
     };
 
     mercadopago.preferences.create(preference)
@@ -100,5 +101,10 @@ app.get('/pending', function (req, res) {
 app.get('/failure', function (req, res) {
     res.render('failure', req.query);
 });
+
+app.post('/notifications', function (req, res) {
+    console.log(req)
+    res.status(201).send();
+})
 
 app.listen(port);
