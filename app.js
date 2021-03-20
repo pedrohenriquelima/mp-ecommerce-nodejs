@@ -72,7 +72,7 @@ app.get('/detail', function (req, res) {
             ],
             installments: 6
         },
-        notification_url: "https://pedrohenriquelima-checkout.herokuapp.com/notification",
+        notification_url: "https://pedrohenriquelima-checkout.herokuapp.com/notification?source_news=webhooks",
     };
 
     mercadopago.preferences.create(preference)
